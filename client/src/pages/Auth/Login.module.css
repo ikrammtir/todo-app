@@ -1,48 +1,105 @@
-.login__card {
-  width: 90%;
+.login__card, .register__card {
+  width: 95%;
   max-width: 450px;
   margin: 120px auto 40px;
-  box-shadow: 0px 4px 20px rgba(0,0,0,0.05);
-  padding: 2.5rem;
-  border: 1px solid #eee;
-  border-radius: 12px;
+  background: #ffffff;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
-  background: #fff;
   box-sizing: border-box;
+  border: 1px solid #f0f0f0;
 }
 
-.login__card h2 {
+.login__card img, 
+.register__card img,
+.login__card .avatar,
+.register__card .avatar,
+img[src*="avatar"] {
+  width: 120px !important;
+  height: 120px !important;
+  max-width: 120px !important;
+  max-height: 120px !important;
+  margin: 0 auto 20px !important;
+  display: block !important;
+  object-fit: contain !important;
+}
+
+.login__card h2, .register__card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 30px;
   text-align: center;
-  font-size: 1.8rem;
-  margin-top: 1rem;
 }
 
-.input__wrapper, .input__inline__wrapper {
-  margin-bottom: 1.2rem;
+.input__wrapper {
   width: 100%;
+  margin-bottom: 15px;
 }
 
 .input__inline__wrapper {
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  gap: 15px;
+  width: 100%;
 }
 
-.login__card img {
-  width: 80px;
-  height: auto;
+.login__card input, 
+.register__card input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 15px;
+  background-color: #ffffff;
+  transition: border-color 0.2s;
 }
 
-@media (max-width: 480px) {
-  .login__card {
-    padding: 1.5rem;
-    width: 95%;
-  }
-  
-  .input__inline__wrapper {
-    flex-direction: column;
-  }
+.login__card input:focus, 
+.register__card input:focus {
+  border-color: #4f46e5;
+  outline: none;
+}
+
+.password__wrapper {
+  width: 100%;
+  margin-bottom: 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.password__wrapper input {
+  flex: 1;
+  border: none !important;
+}
+
+.loginBtn, .registerBtn {
+  width: 100%;
+  padding: 14px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.auth_switch_text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.auth_switch_text a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 600;
 }
