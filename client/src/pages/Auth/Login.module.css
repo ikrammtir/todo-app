@@ -1,7 +1,7 @@
-.login__card {
+.login__card, .register__card {
   width: 95%;
   max-width: 450px;
-  margin: 140px auto 40px;
+  margin: 120px auto 40px;
   background: #ffffff;
   padding: 3rem 2rem;
   border-radius: 20px;
@@ -29,7 +29,7 @@ img[alt*="Register"] {
   object-fit: contain !important;
 }
 
-.login__card h2 {
+.login__card h2, .register__card h2 {
   font-size: 2rem;
   font-weight: 700;
   color: #1e293b;
@@ -48,13 +48,51 @@ img[alt*="Register"] {
   width: 100%;
 }
 
-.login__card input {
+.login__card input, 
+.register__card input {
   width: 100%;
-  padding: 14px;
+  padding: 14px 18px;
   border: 1px solid #e2e8f0;
   border-radius: 10px;
   box-sizing: border-box;
   font-size: 15px;
+  background-color: #ffffff;
+  transition: border-color 0.2s;
+}
+
+.login__card input:focus, 
+.register__card input:focus {
+  border-color: #4f46e5;
+  outline: none;
+}
+
+.password__wrapper {
+  width: 100%;
+  padding: 0;
+  margin-bottom: 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.password__wrapper input {
+  flex: 1;
+  border: none !important;
+  padding: 14px 18px !important;
+  margin: 0 !important;
+  background: transparent !important;
+}
+
+.password__wrapper span, 
+.password__wrapper i {
+  padding-right: 15px;
+  cursor: pointer;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
 }
 
 .loginBtn, .registerBtn {
@@ -67,12 +105,29 @@ img[alt*="Register"] {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 10px;
   transition: background 0.3s;
 }
 
 .loginBtn:hover, .registerBtn:hover {
   background-color: #4338ca;
+}
+
+.loginBtn:disabled, .registerBtn:disabled {
+  background-color: #94a3b8;
+  cursor: not-自已;
+}
+
+.auth_switch_text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.auth_switch_text a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 @media (max-width: 500px) {
