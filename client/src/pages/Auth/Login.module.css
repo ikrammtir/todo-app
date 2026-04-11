@@ -2,21 +2,23 @@
   width: 95%;
   max-width: 450px;
   margin: 140px auto 40px;
-  background: white;
+  background: #ffffff;
   padding: 3rem 2rem;
   border-radius: 20px;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  border: 1px solid #f0f0f0;
 }
 
 .login__card h2 {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 30px;
   color: #1e293b;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .input__wrapper {
@@ -36,20 +38,30 @@
   border: 1px solid #e2e8f0;
   border-radius: 10px;
   box-sizing: border-box;
+  font-size: 15px;
 }
 
 .loginBtn, .registerBtn {
   width: 100%;
   padding: 14px;
-  background: #4f46e5;
+  background-color: #4f46e5;
   color: white;
   border: none;
   border-radius: 10px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   margin-top: 20px;
+  transition: background 0.3s;
+}
+
+.loginBtn:hover, .registerBtn:hover {
+  background-color: #4338ca;
 }
 
 @media (max-width: 500px) {
-  .input__inline__wrapper { flex-direction: column; gap: 0; }
+  .input__inline__wrapper {
+    flex-direction: column;
+    gap: 0;
+  }
 }

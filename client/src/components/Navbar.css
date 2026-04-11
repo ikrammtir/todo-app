@@ -25,7 +25,6 @@ nav {
   display: flex;
   align-items: center;
   gap: 12px;
-  text-decoration: none;
 }
 
 .logo__wrapper img {
@@ -70,6 +69,12 @@ nav {
 }
 
 @media (max-width: 768px) {
-  header { height: auto; padding: 10px 0; }
-  nav { flex-direction: column; gap: 10px; }
+  header {
+    height: auto;
+    padding: 10px 0;
+  }
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
