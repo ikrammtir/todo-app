@@ -6,10 +6,10 @@ header {
   top: 0;
   left: 0;
   z-index: 1000;
-  box-sizing: border-box;
   height: 80px;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
 }
 
 nav {
@@ -19,7 +19,6 @@ nav {
   width: 100%;
   padding: 0 5%;
   margin: 0 auto;
-  box-sizing: border-box;
 }
 
 .logo__wrapper {
@@ -50,11 +49,17 @@ nav {
   padding: 0;
 }
 
+.navigation-menu li a {
+  text-decoration: none;
+  color: #475569;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
 .userInfoNav {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-left: 20px;
 }
 
 .avatar {
@@ -65,18 +70,6 @@ nav {
 }
 
 @media (max-width: 768px) {
-  header {
-    height: auto;
-    padding: 10px 0;
-  }
-  
-  nav {
-    flex-direction: column;
-    padding: 10px 5%;
-  }
-
-  .navigation-menu {
-    margin-top: 10px;
-    gap: 15px;
-  }
+  header { height: auto; padding: 10px 0; }
+  nav { flex-direction: column; gap: 10px; }
 }
