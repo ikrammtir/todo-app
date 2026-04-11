@@ -6,7 +6,6 @@ body {
   background-color: #f8fafc;
 }
 
-/* 1. BUTTON FIX: Global styles for buttons across all pages */
 .primaryBtn, 
 .loginBtn, 
 .registerBtn {
@@ -36,19 +35,22 @@ body {
   transition: background 0.3s;
 }
 
-/* 2. IMAGE FIX: Prevents the giant icon in Login/Register */
 .login__card img, 
 .register__card img,
 .login__card .avatar,
-.register__card .avatar {
+.register__card .avatar,
+img[src*="avatar"], 
+img[alt*="Login"],
+img[alt*="Register"] {
   width: 120px !important;
   height: 120px !important;
+  max-width: 120px !important;
+  max-height: 120px !important;
   margin: 0 auto 20px !important;
   display: block !important;
-  object-fit: contain;
+  object-fit: contain !important;
 }
 
-/* 3. CARD FIX: Centers the login/register box */
 .login__card, 
 .register__card {
   max-width: 450px;
@@ -60,9 +62,12 @@ body {
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
   box-sizing: border-box;
   text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* 4. LANDING PAGE LAYOUT */
 .landing_wrapper {
   display: flex;
   align-items: center;
