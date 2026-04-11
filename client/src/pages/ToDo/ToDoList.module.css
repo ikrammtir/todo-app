@@ -1,69 +1,74 @@
 body {
-  background-color: #f0f2f5;
+  background-color: #f8fafc;
   margin: 0;
 }
 
-.ToDoWrapper {
-  margin-top: 80px;
+.toDoWrapper {
+  margin-top: 100px;
   padding: 2rem 5%;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 100px);
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.ToDoHeader {
+.toDoHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #fff;
-  padding: 1.2rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  margin-bottom: 2rem;
-  width: 100%;
-  max-width: 1100px;
-  box-sizing: border-box;
-  gap: 15px;
+  background: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-bottom: 2.5rem;
+  gap: 20px;
 }
 
-.ToDoHeader input {
+.toDoHeader h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+.searchBarWrapper {
   flex: 1;
-  padding: 12px 18px;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 15px;
-  outline: none;
-  transition: 0.2s;
-}
-
-.ToDoHeader input:focus {
-  border-color: #4f46e5;
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 
 .toDoListCardWrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
   width: 100%;
-  max-width: 1100px;
 }
 
 .toDoCard {
-  background: white;
-  border-radius: 12px;
+  background: #ffffff;
+  border-radius: 20px;
   padding: 24px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-  border: 1px solid #f0f0f0;
-  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  border: 1px solid #f1f5f9;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .toDoCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: #e2e8f0;
+}
+
+.toDoCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
 }
 
 .toDoCardHeader h3 {
@@ -71,76 +76,68 @@ body {
   font-size: 1.25rem;
   font-weight: 700;
   color: #1e293b;
+  line-height: 1.4;
 }
 
 .toDoCard p {
-  font-size: 15px;
+  font-size: 0.95rem;
   color: #64748b;
-  margin: 1.2rem 0;
+  margin: 0 0 20px 0;
   line-height: 1.6;
+  flex-grow: 1;
 }
 
 .toDoCardFooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 16px;
   border-top: 1px solid #f1f5f9;
-  padding-top: 18px;
-  margin-top: auto;
 }
 
-.toDoFooterAction {
+.dateTag {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  background: #f8fafc;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #f1f5f9;
+}
+
+.toDoCardFooterAction {
   display: flex;
-  gap: 15px;
+  gap: 8px;
 }
 
 .actionIcon {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  padding: 8px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: all 0.2s;
+  background: #f8fafc;
 }
 
-.actionIcon.edit { color: #4f46e5; }
-.actionIcon.delete { color: #ef4444; }
-.actionIcon.complete { color: #10b981; }
-
 .actionIcon:hover {
+  background: #f1f5f9;
   transform: scale(1.1);
-  opacity: 0.8;
 }
 
 .noTaskWrapper {
-  padding: 5rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  text-align: center;
-  color: #94a3b8;
+  grid-column: 1 / -1;
+  padding: 6rem 0;
+  background: white;
+  border-radius: 24px;
+  border: 2px dashed #e2e8f0;
 }
 
-.noTaskWrapper img {
-  width: 200px;
-  margin-bottom: 25px;
-  opacity: 0.5;
-}
-
-@media (max-width: 768px) {
-  .ToDoWrapper {
-    padding: 1rem;
-  }
-
-  .ToDoHeader {
+@media (max-width: 992px) {
+  .toDoHeader {
     flex-direction: column;
-    padding: 1.5rem;
+    align-items: stretch;
   }
   
-  .ToDoHeader input, .ToDoHeader button, .ToDoHeader select {
-    width: 100%;
-  }
-
-  .toDoListCardWrapper {
-    grid-template-columns: 1fr;
+  .searchBarWrapper {
+    flex-direction: column;
   }
 }
