@@ -17,7 +17,9 @@ app.use(express.json());
 app.use('/api', authRoutes);
 app.use('/api/todo', toDoRoutes);
 
-
+app.get('/', (req, res) => {
+    res.send('Server is up and running!');
+});
 
 mongoose.connect(process.env.DB_URL)
   .then(() => {
