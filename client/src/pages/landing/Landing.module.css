@@ -1,96 +1,138 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8fafc;
+}
+
 .landing__container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 60px 5%;
-  min-height: 80vh;
-  gap: 40px;
+  min-height: calc(100vh - 80px);
+  padding: 0 5%;
+  gap: 20px;
 }
 
 .landing__content {
   flex: 1;
-  text-align: left;
+  max-width: 500px;
 }
 
 .landing__content h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: 64px;
   font-weight: 800;
   color: #1e293b;
   line-height: 1.1;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  letter-spacing: -1px;
 }
 
 .landing__btns {
   display: flex;
-  gap: 15px;
+  gap: 20px;
 }
 
 .registerBtn_landing {
-  padding: 12px 35px;
-  background: #4f46e5;
+  padding: 14px 45px;
+  background-color: #4f46e5;
   color: white;
-  border-radius: 10px;
   border: none;
+  border-radius: 12px;
+  font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+  transition: transform 0.2s;
 }
 
 .loginBtn_landing {
-  padding: 12px 35px;
-  background: white;
+  padding: 14px 45px;
+  background-color: white;
   color: #4f46e5;
   border: 2px solid #4f46e5;
-  border-radius: 10px;
+  border-radius: 12px;
+  font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.2s;
+}
+
+.registerBtn_landing:hover {
+  transform: translateY(-2px);
+}
+
+.loginBtn_landing:hover {
+  background-color: #f1f5f9;
 }
 
 .landing__image {
   flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
 }
 
 .landing__image img {
   width: 100%;
-  max-width: 550px; /* Constrains the image so it doesn't get too large */
+  max-width: 480px; /* This keeps it small and proportional like your picture */
   height: auto;
-  display: block;
+  object-fit: contain;
 }
 
-/* Responsive Tablet & Mobile */
-@media (max-width: 992px) {
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 1024px) {
+  .landing__content h1 {
+    font-size: 48px;
+  }
+  
+  .landing__image img {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
   .landing__container {
-    flex-direction: column-reverse; /* Puts image on top for mobile */
+    flex-direction: column;
     text-align: center;
-    padding: 40px 20px;
+    padding-top: 50px;
+    justify-content: flex-start;
   }
 
   .landing__content {
-    text-align: center;
+    order: 2;
+    margin-top: 40px;
+  }
+
+  .landing__image {
+    order: 1;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .landing__image img {
+    max-width: 320px;
   }
 
   .landing__btns {
     justify-content: center;
   }
-
-  .landing__content h1 {
-    font-size: 2.2rem;
-  }
 }
 
 @media (max-width: 480px) {
+  .landing__content h1 {
+    font-size: 32px;
+  }
+
   .landing__btns {
     flex-direction: column;
     width: 100%;
   }
-  
-  .registerBtn_landing, .loginBtn_landing {
+
+  .registerBtn_landing, 
+  .loginBtn_landing {
     width: 100%;
   }
 }
