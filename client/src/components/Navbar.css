@@ -1,80 +1,113 @@
 header {
   width: 100%;
   background: #ffffff;
-  border-bottom: 1px solid #f1f5f9;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+  padding: 10px 30px;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 0 5%;
-  margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .logo__wrapper {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .logo__wrapper img {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
 }
 
 .logo__wrapper h4 {
   margin: 0;
-  font-size: 22px;
-  font-weight: 700;
-  color: #1e293b;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .navigation-menu {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 25px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+.navigation-menu li {
+  display: flex;
+  align-items: center;
+}
+
 .navigation-menu li a {
   text-decoration: none;
-  color: #475569;
-  font-weight: 500;
+  color: #333;
+  font-size: 16px;
   transition: 0.3s;
+}
+
+.navigation-menu li a:hover {
+  color: #007bff;
+}
+
+.activeNav {
+  color: #007bff !important;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 3px;
 }
 
 .userInfoNav {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  cursor: pointer;
 }
 
 .avatar {
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
 
+.userInfoNav span {
+  font-size: 14px;
+  color: #333;
+}
+
 @media (max-width: 768px) {
   header {
-    height: auto;
-    padding: 10px 0;
+    padding: 10px 15px;
   }
+
   nav {
     flex-direction: column;
+    align-items: center;
     gap: 10px;
+  }
+
+  .navigation-menu {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .navigation-menu li a {
+    font-size: 14px;
+  }
+
+  .userInfoNav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .logo__wrapper h4 {
+    font-size: 18px;
   }
 }
