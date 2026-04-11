@@ -1,113 +1,112 @@
-.todo__container {
-  max-width: 800px;
-  margin: 100px auto;
-  padding: 20px;
+body {
+  background-color: #f0f2f5;
+  margin: 0;
 }
 
-.todo__header {
+.ToDoWrapper {
+  margin-top: 80px;
+  padding: 2rem 5%;
+  min-height: calc(100vh - 80px);
+  box-sizing: border-box;
+}
+
+.ToDoHeader {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
-}
-
-.todo__header h2 {
-  font-size: 2rem;
-  color: #1e293b;
-  font-weight: 700;
-}
-
-.todo__controls {
-  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  padding: 1.2rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
   gap: 15px;
-  margin-bottom: 25px;
 }
 
-.search__input {
-  flex: 1;
-  padding: 12px 18px;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  font-size: 15px;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.search__input:focus {
-  border-color: #4f46e5;
-}
-
-.add__btn {
-  padding: 12px 25px;
-  background-color: #4f46e5;
-  color: white;
-  border: none;
-  border-radius: 10px;
+.ToDoHeader h2 {
+  margin: 0;
+  font-size: 1.3rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s;
 }
 
-.add__btn:hover {
-  background-color: #4338ca;
+.toDoListCardWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
 }
 
-.todo__list {
+.toDoCard {
+  border: 1px solid #eee;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.05);
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  transition: 0.3s;
 }
 
-.todo__item {
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
+.toDoCard:hover {
+  transform: translateY(-3px);
+}
+
+.toDoCard p {
+  font-size: 15px;
+  color: #666;
+  margin: 1rem 0;
+  line-height: 1.5;
+}
+
+.toDoCardFooter, .toDoCardHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-  border: 1px solid #f0f0f0;
 }
 
-.todo__info h3 {
-  margin: 0 0 5px 0;
-  font-size: 1.1rem;
-  color: #1e293b;
+.toDoCardFooter {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 15px;
+  margin-top: auto;
 }
 
-.todo__info p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #64748b;
-}
-
-.todo__actions {
+.toDoFooterAction {
   display: flex;
   gap: 10px;
 }
 
-.delete__btn {
-  background: #fee2e2;
-  color: #ef4444;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 8px;
+.actionIcon {
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: 0.3s;
+  color: #4f46e5;
+  transition: 0.2s;
 }
 
-.delete__btn:hover {
-  background: #fecaca;
+.actionIcon:hover {
+  opacity: 0.7;
 }
 
-.no__data {
+.noTaskWrapper {
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   text-align: center;
-  padding: 50px;
-  color: #94a3b8;
 }
 
-.no__data img {
-  width: 150px;
-  margin-bottom: 20px;
-  opacity: 0.6;
+@media (max-width: 768px) {
+  .ToDoWrapper {
+    padding: 1rem;
+  }
+
+  .ToDoHeader {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .toDoListCardWrapper {
+    grid-template-columns: 1fr;
+  }
 }
