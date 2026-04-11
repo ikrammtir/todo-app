@@ -1,3 +1,5 @@
+/* app.css - COMPLETE FINAL VERSION */
+
 body {
   margin: 0;
   padding: 0;
@@ -8,7 +10,7 @@ body {
 
 /* Global Button Styles */
 .primaryBtn {
-  padding: 12px 35px; /* Slightly tighter padding to match the image */
+  padding: 12px 35px;
   background-color: #4f46e5;
   color: white;
   border-radius: 10px;
@@ -33,48 +35,40 @@ body {
   transition: all 0.3s ease;
 }
 
-.primaryBtn:hover {
-  background-color: #4338ca;
-  transform: translateY(-2px);
-}
-
-.secondaryBtn:hover {
-  background-color: #f1f5f9;
-}
-
-/* Landing Page Layout */
+/* Landing Page Wrapper */
 .landing_wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Changed to space-between for better balance */
+  justify-content: space-between;
   padding: 0 8%;
-  min-height: calc(100vh - 80px); /* Adjusts for Navbar height */
-  gap: 40px;
-  max-width: 1400px;
+  min-height: calc(100vh - 80px); /* Centers between Navbar and bottom */
+  gap: 50px;
+  max-width: 1300px;
   margin: 0 auto;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .landing_text {
   flex: 1;
-  max-width: 550px; /* Prevents text from stretching too far */
+  max-width: 550px;
+  text-align: left;
 }
 
 .landing_text h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive font size */
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
   color: #1e293b;
   line-height: 1.1;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .btnWrapper {
   display: flex;
-  gap: 15px;
-  margin-top: 30px;
+  gap: 20px;
 }
 
-/* THE CRITICAL FIX: Limits the image size to match your screenshot */
+/* Image Container - This stops the image from being "giant" */
 .landing_img {
   flex: 1;
   display: flex;
@@ -83,46 +77,37 @@ body {
 }
 
 .landing_img img {
-  width: 100%;
-  max-width: 500px; /* Reduced from 600px to keep it proportional */
-  height: auto;
+  width: 100% !important;
+  max-width: 520px !important; /* Matches your small image goal */
+  height: auto !important;
+  display: block !important;
   object-fit: contain;
 }
 
-/* Fix for Login/Register Cards */
-.login__card img, 
-.register__card img {
-  width: 120px !important;
-  height: 120px !important;
-  margin: 0 auto 20px;
-  display: block;
-  object-fit: contain;
-}
+/* --- MOBILE & TABLET RESPONSIVENESS --- */
 
-/* --- RESPONSIVE FIXES --- */
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
   .landing_wrapper {
-    gap: 20px;
-    padding: 0 5%;
-  }
-}
-
-@media (max-width: 768px) {
-  .landing_wrapper {
-    flex-direction: column; /* Text stays on top of image on mobile */
-    justify-content: center;
+    flex-direction: column !important; /* STACKS VERTICALLY */
     text-align: center;
-    padding-top: 100px;
-    padding-bottom: 50px;
+    padding: 60px 5%;
+    justify-content: center;
+    min-height: auto;
   }
 
   .landing_text {
+    order: 1; /* Title first on mobile */
     max-width: 100%;
   }
 
+  .landing_img {
+    order: 2; /* Image below text on mobile */
+    width: 100%;
+    margin-top: 30px;
+  }
+
   .landing_img img {
-    max-width: 320px; /* Small image for mobile view */
-    margin-top: 40px;
+    max-width: 320px !important; /* Keeps image small on phones */
   }
 
   .btnWrapper {
@@ -131,12 +116,26 @@ body {
 }
 
 @media (max-width: 480px) {
+  .landing_text h1 {
+    font-size: 2.2rem;
+  }
+
   .btnWrapper {
-    flex-direction: column;
+    flex-direction: column; /* Buttons stack on tiny phones */
     width: 100%;
   }
 
   .primaryBtn, .secondaryBtn {
     width: 100%;
+    text-align: center;
   }
+}
+
+/* Login/Register Card Image Fix */
+.login__card img, 
+.register__card img {
+  width: 120px !important;
+  height: 120px !important;
+  margin: 0 auto 20px;
+  display: block;
 }
