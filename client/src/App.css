@@ -1,13 +1,14 @@
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 nav {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 1000;
   width: 100%;
   background-color: white;
   box-shadow: 0px 0.233px 8px lightgray;
@@ -15,7 +16,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  flex-wrap: wrap;
+  box-sizing: border-border;
 }
 
 .landing_wrapper {
@@ -24,19 +25,20 @@ nav {
   justify-content: space-between;
   padding: 0 6rem;
   min-height: 100vh;
-  padding-top: 120px;
-  gap: 20px;
+  padding-top: 100px;
+  gap: 40px;
+  box-sizing: border-box;
 }
 
 .landing_text {
   flex: 1;
-  margin-top: 80px;
 }
 
 .landing_text h1 {
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 20px;
+  line-height: 1.2;
 }
 
 .btnWrapper {
@@ -53,6 +55,7 @@ nav {
   font-size: 14px;
   transition: 0.3s;
   text-align: center;
+  display: inline-block;
 }
 
 .primaryBtn {
@@ -80,19 +83,26 @@ nav {
 }
 
 .landing_img img {
-  width: 75%;
-  max-width: 450px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
 }
 
 @media (max-width: 768px) {
+  nav {
+    padding: 1rem;
+  }
+
   .landing_wrapper {
-    flex-direction: column;
-    padding: 0 1.5rem;
+    flex-direction: column-reverse;
+    padding: 120px 1.5rem 40px;
     text-align: center;
+    justify-content: center;
   }
 
   .landing_text {
-    margin-top: 40px;
+    margin-top: 20px;
+    width: 100%;
   }
 
   .landing_text h1 {
@@ -107,10 +117,11 @@ nav {
   .primaryBtn,
   .secondaryBtn {
     width: 100%;
+    box-sizing: border-box;
   }
 
   .landing_img img {
-    width: 90%;
-    max-width: 300px;
+    width: 100%;
+    max-width: 320px;
   }
 }
