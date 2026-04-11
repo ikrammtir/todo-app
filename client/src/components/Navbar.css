@@ -3,6 +3,11 @@ header {
   background: #ffffff;
   border-bottom: 1px solid #eee;
   padding: 10px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
 nav {
@@ -10,6 +15,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .logo__wrapper {
@@ -39,11 +46,6 @@ nav {
   padding: 0;
 }
 
-.navigation-menu li {
-  display: flex;
-  align-items: center;
-}
-
 .navigation-menu li a {
   text-decoration: none;
   color: #333;
@@ -69,15 +71,10 @@ nav {
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   object-fit: cover;
-}
-
-.userInfoNav span {
-  font-size: 14px;
-  color: #333;
 }
 
 @media (max-width: 768px) {
@@ -86,15 +83,11 @@ nav {
   }
 
   nav {
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
     gap: 10px;
   }
 
   .navigation-menu {
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
     gap: 15px;
   }
 
@@ -102,12 +95,7 @@ nav {
     font-size: 14px;
   }
 
-  .userInfoNav {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .logo__wrapper h4 {
-    font-size: 18px;
+  .userInfoNav span {
+    display: none;
   }
 }

@@ -4,58 +4,43 @@ body {
   overflow-x: hidden;
 }
 
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  width: 100%;
-  background-color: white;
-  box-shadow: 0px 0.233px 8px lightgray;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  box-sizing: border-border;
-}
-
 .landing_wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 6rem;
+  justify-content: center;
+  padding: 0 8%;
   min-height: 100vh;
-  padding-top: 100px;
   gap: 40px;
   box-sizing: border-box;
 }
 
 .landing_text {
   flex: 1;
+  max-width: 600px;
 }
 
 .landing_text h1 {
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 3.5rem;
+  font-weight: 800;
   margin-bottom: 20px;
-  line-height: 1.2;
+  line-height: 1.1;
+  color: #1e293b;
 }
 
 .btnWrapper {
   display: flex;
-  gap: 12px;
+  gap: 15px;
   margin-top: 30px;
 }
 
-.primaryBtn,
-.secondaryBtn {
-  padding: 12px 24px;
+.primaryBtn, .secondaryBtn {
+  padding: 14px 28px;
   border-radius: 8px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 600;
   transition: 0.3s;
   text-align: center;
-  display: inline-block;
 }
 
 .primaryBtn {
@@ -63,17 +48,9 @@ nav {
   color: white;
 }
 
-.primaryBtn:hover {
-  background-color: #4338ca;
-}
-
 .secondaryBtn {
-  background-color: #f3f4f6;
-  color: #555;
-}
-
-.secondaryBtn:hover {
-  background-color: #e5e7eb;
+  background-color: #f1f5f9;
+  color: #475569;
 }
 
 .landing_img {
@@ -84,44 +61,27 @@ nav {
 
 .landing_img img {
   width: 100%;
-  max-width: 500px;
+  max-width: 550px;
   height: auto;
 }
 
 @media (max-width: 768px) {
-  nav {
-    padding: 1rem;
-  }
-
   .landing_wrapper {
     flex-direction: column-reverse;
-    padding: 120px 1.5rem 40px;
+    padding: 120px 1.5rem 60px;
     text-align: center;
-    justify-content: center;
-  }
-
-  .landing_text {
-    margin-top: 20px;
-    width: 100%;
   }
 
   .landing_text h1 {
-    font-size: 32px;
+    font-size: 2.2rem;
   }
 
   .btnWrapper {
     flex-direction: column;
-    width: 100%;
-  }
-
-  .primaryBtn,
-  .secondaryBtn {
-    width: 100%;
-    box-sizing: border-box;
   }
 
   .landing_img img {
-    width: 100%;
-    max-width: 320px;
+    max-width: 350px;
+    width: 90%;
   }
 }
