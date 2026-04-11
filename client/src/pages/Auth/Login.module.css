@@ -40,12 +40,14 @@ img[alt*="Register"] {
 .input__wrapper {
   width: 100%;
   margin-bottom: 15px;
+  box-sizing: border-box;
 }
 
 .input__inline__wrapper {
   display: flex;
   gap: 15px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .login__card input, 
@@ -58,6 +60,7 @@ img[alt*="Register"] {
   font-size: 15px;
   background-color: #ffffff;
   transition: border-color 0.2s;
+  display: block;
 }
 
 .login__card input:focus, 
@@ -68,7 +71,6 @@ img[alt*="Register"] {
 
 .password__wrapper {
   width: 100%;
-  padding: 0;
   margin-bottom: 15px;
   border: 1px solid #e2e8f0;
   border-radius: 10px;
@@ -76,6 +78,7 @@ img[alt*="Register"] {
   box-sizing: border-box;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
 .password__wrapper input {
@@ -84,15 +87,17 @@ img[alt*="Register"] {
   padding: 14px 18px !important;
   margin: 0 !important;
   background: transparent !important;
+  outline: none !important;
 }
 
 .password__wrapper span, 
 .password__wrapper i {
-  padding-right: 15px;
+  padding: 0 15px;
   cursor: pointer;
   color: #94a3b8;
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 .loginBtn, .registerBtn {
@@ -114,8 +119,8 @@ img[alt*="Register"] {
 }
 
 .loginBtn:disabled, .registerBtn:disabled {
-  background-color: #94a3b8;
-  cursor: not-自已;
+  background-color: #cbd5e1;
+  cursor: not-allowed;
 }
 
 .auth_switch_text {
@@ -133,6 +138,6 @@ img[alt*="Register"] {
 @media (max-width: 500px) {
   .input__inline__wrapper {
     flex-direction: column;
-    gap: 0;
+    gap: 15px;
   }
 }
