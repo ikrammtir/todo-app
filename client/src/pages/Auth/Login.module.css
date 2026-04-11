@@ -13,6 +13,22 @@
   border: 1px solid #f0f0f0;
 }
 
+.login__card img, 
+.register__card img,
+.login__card .avatar,
+.register__card .avatar,
+img[src*="avatar"], 
+img[alt*="Login"],
+img[alt*="Register"] {
+  width: 120px !important;
+  height: 120px !important;
+  max-width: 120px !important;
+  max-height: 120px !important;
+  margin: 0 auto 20px !important;
+  display: block !important;
+  object-fit: contain !important;
+}
+
 .login__card h2 {
   font-size: 2rem;
   font-weight: 700;
