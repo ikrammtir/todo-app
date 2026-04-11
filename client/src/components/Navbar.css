@@ -9,6 +9,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo__wrapper {
@@ -77,4 +78,40 @@ nav {
 .userInfoNav span {
   font-size: 14px;
   color: #333;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 10px 15px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .navigation-menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .navigation-menu li {
+    width: 100%;
+  }
+
+  .navigation-menu li a {
+    width: 100%;
+    display: block;
+  }
+
+  .userInfoNav {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .logo__wrapper h4 {
+    font-size: 18px;
+  }
 }
