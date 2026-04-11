@@ -1,73 +1,60 @@
 header {
   width: 100%;
   background: #ffffff;
-  border-bottom: 1px solid #eee;
-  padding: 10px 30px;
+  border-bottom: 1px solid #f1f5f9;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
   box-sizing: border-box;
+  height: 80px;
+  display: flex;
+  align-items: center;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  max-width: 1400px;
+  width: 100%;
+  padding: 0 5%;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .logo__wrapper {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  text-decoration: none;
 }
 
 .logo__wrapper img {
-  width: 35px;
-  height: 35px;
-  object-fit: contain;
+  width: 40px;
+  height: 40px;
 }
 
 .logo__wrapper h4 {
   margin: 0;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e293b;
 }
 
 .navigation-menu {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 30px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.navigation-menu li a {
-  text-decoration: none;
-  color: #333;
-  font-size: 16px;
-  transition: 0.3s;
-}
-
-.navigation-menu li a:hover {
-  color: #007bff;
-}
-
-.activeNav {
-  color: #007bff !important;
-  border-bottom: 2px solid #007bff;
-  padding-bottom: 3px;
-}
-
 .userInfoNav {
   display: flex;
   align-items: center;
-  gap: 10px;
-  cursor: pointer;
+  gap: 12px;
+  margin-left: 20px;
 }
 
 .avatar {
@@ -79,23 +66,17 @@ nav {
 
 @media (max-width: 768px) {
   header {
-    padding: 10px 15px;
+    height: auto;
+    padding: 10px 0;
   }
-
+  
   nav {
-    justify-content: center;
-    gap: 10px;
+    flex-direction: column;
+    padding: 10px 5%;
   }
 
   .navigation-menu {
+    margin-top: 10px;
     gap: 15px;
-  }
-
-  .navigation-menu li a {
-    font-size: 14px;
-  }
-
-  .userInfoNav span {
-    display: none;
   }
 }
