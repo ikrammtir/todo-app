@@ -17,18 +17,23 @@
 .login__card h2 {
   text-align: center;
   font-size: 1.8rem;
-  margin-top: 1rem;
+  margin: 20px 0;
 }
 
-.input__wrapper, .input__inline__wrapper {
+.input__wrapper {
   margin-bottom: 1.2rem;
   width: 100%;
 }
 
 .input__inline__wrapper {
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  flex-direction: column; 
+  gap: 0;
+  width: 100%;
+}
+
+.input__inline__wrapper .input__wrapper {
+  width: 100%;
 }
 
 .login__card img {
@@ -36,13 +41,20 @@
   height: auto;
 }
 
+@media (min-width: 480px) {
+  .input__inline__wrapper {
+    flex-direction: row;
+    gap: 15px;
+  }
+  
+  .input__inline__wrapper .input__wrapper {
+    width: 50%;
+  }
+}
+
 @media (max-width: 480px) {
   .login__card {
     padding: 1.5rem;
     width: 95%;
-  }
-  
-  .input__inline__wrapper {
-    flex-direction: column;
   }
 }

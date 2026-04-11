@@ -1,51 +1,129 @@
-.landing__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin-top: 80px;
-  padding: 2rem;
-  gap: 2rem;
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-.landing__text {
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   width: 100%;
+  background-color: white;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.landing_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10%;
+  min-height: 100vh;
+  gap: 40px;
+  box-sizing: border-box;
+}
+
+.landing_text {
+  flex: 1;
   max-width: 600px;
 }
 
-.landing__text h1 {
-  font-size: 3rem;
-  margin: 0;
+.landing_text h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #1f2937;
+  line-height: 1.1;
 }
 
-.landing__img {
-  width: 100%;
-  max-width: 500px;
+.btnWrapper {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.primaryBtn {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.secondaryBtn {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.landing_img {
+  flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.landing__img img {
+.landing_img img {
   width: 100%;
+  max-width: 550px;
   height: auto;
+  object-fit: contain;
 }
 
-@media (min-width: 768px) {
-  .landing__wrapper {
-    justify-content: space-between;
-    flex-wrap: nowrap;
+@media (max-width: 1024px) {
+  .landing_text h1 {
+    font-size: 2.8rem;
   }
-  
-  .landing__text {
-    width: 45%;
-    text-align: left;
+}
+
+@media (max-width: 768px) {
+  .landing_wrapper {
+    flex-direction: column-reverse;
+    padding: 100px 1.5rem 50px;
+    text-align: center;
   }
 
-  .landing__img {
-    width: 50%;
+  .landing_text {
+    width: 100%;
+    margin-top: 0;
   }
 
-  .landing__text h1 {
-    font-size: 4rem;
+  .landing_text h1 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+
+  .btnWrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .landing_img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .landing_img img {
+    width: 85%;
+    max-width: 350px;
   }
 }
