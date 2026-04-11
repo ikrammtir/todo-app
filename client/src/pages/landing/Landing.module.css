@@ -1,138 +1,101 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #f8fafc;
-}
+/* Landing.module.css */
 
-.landing__container {
+.landingContainer {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  min-height: calc(100vh - 80px);
+  min-height: 80vh;
   padding: 0 5%;
-  gap: 20px;
+  gap: 40px;
 }
 
-.landing__content {
+.landingContent {
   flex: 1;
-  max-width: 500px;
+  max-width: 550px;
 }
 
-.landing__content h1 {
-  font-size: 64px;
+.landingContent h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
   color: #1e293b;
   line-height: 1.1;
-  margin-bottom: 40px;
-  letter-spacing: -1px;
+  margin-bottom: 30px;
 }
 
-.landing__btns {
+.landingBtns {
   display: flex;
-  gap: 20px;
+  gap: 15px;
 }
 
-.registerBtn_landing {
-  padding: 14px 45px;
-  background-color: #4f46e5;
+.registerBtn {
+  padding: 12px 35px;
+  background: #4f46e5;
   color: white;
+  border-radius: 10px;
   border: none;
-  border-radius: 12px;
-  font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
-  transition: transform 0.2s;
+  transition: 0.3s;
 }
 
-.loginBtn_landing {
-  padding: 14px 45px;
-  background-color: white;
+.loginBtn {
+  padding: 12px 35px;
+  background: white;
   color: #4f46e5;
   border: 2px solid #4f46e5;
-  border-radius: 12px;
-  font-size: 18px;
+  border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: 0.3s;
 }
 
-.registerBtn_landing:hover {
-  transform: translateY(-2px);
-}
-
-.loginBtn_landing:hover {
-  background-color: #f1f5f9;
-}
-
-.landing__image {
+.landingImage {
   flex: 1;
   display: flex;
-  justify-content: flex-end;
-  padding: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
-.landing__image img {
+/* This fixes the "Giant Image" issue from your screenshot */
+.landingImage img {
   width: 100%;
-  max-width: 480px; /* This keeps it small and proportional like your picture */
+  max-width: 500px; 
   height: auto;
-  object-fit: contain;
+  display: block;
 }
 
-/* RESPONSIVE DESIGN */
-
-@media (max-width: 1024px) {
-  .landing__content h1 {
-    font-size: 48px;
-  }
-  
-  .landing__image img {
-    max-width: 400px;
-  }
-}
-
-@media (max-width: 768px) {
-  .landing__container {
-    flex-direction: column;
+/* Tablet & Mobile Responsiveness */
+@media (max-width: 992px) {
+  .landingContainer {
+    flex-direction: column; 
     text-align: center;
-    padding-top: 50px;
-    justify-content: flex-start;
-  }
-
-  .landing__content {
-    order: 2;
-    margin-top: 40px;
-  }
-
-  .landing__image {
-    order: 1;
+    padding-top: 40px;
     justify-content: center;
-    width: 100%;
   }
 
-  .landing__image img {
-    max-width: 320px;
+  .landingContent {
+    max-width: 100%;
+    margin-bottom: 40px;
   }
 
-  .landing__btns {
+  .landingBtns {
     justify-content: center;
+  }
+
+  .landingImage img {
+    max-width: 300px; /* Makes image smaller on mobile like your goal */
   }
 }
 
 @media (max-width: 480px) {
-  .landing__content h1 {
-    font-size: 32px;
-  }
-
-  .landing__btns {
+  .landingBtns {
     flex-direction: column;
     width: 100%;
   }
-
-  .registerBtn_landing, 
-  .loginBtn_landing {
+  
+  .registerBtn, .loginBtn {
     width: 100%;
   }
 }
