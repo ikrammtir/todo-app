@@ -18,7 +18,7 @@ function Landing() {
         </div>
         </div>
 
-        <div className={styles.landing_img}>
+        <div className={styles.landingImage}>
           <img src={landing} alt="landing" />
         </div>
       </div>
