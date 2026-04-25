@@ -56,11 +56,11 @@
 }
 
 .landingImage img {
-  width: 100% !important;
-  max-width: 420px !important;
-  height: auto !important;
-  object-fit: contain;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
   display: block;
+  object-fit: contain;
 }
 
 @media (max-width: 992px) {
@@ -79,8 +79,7 @@
   }
 
   .landingImage img {
-    width: 90% !important;
-    max-width: 300px !important;
+    max-width: 380px;
   }
 }
 
@@ -102,13 +101,7 @@
     font-size: 14px;
   }
 
-  .landingImage {
-    width: 100%;
-  }
-
   .landingImage img {
-    width: 75% !important;
-    max-width: 220px !important;
-    margin: 0 auto;
+    max-width: 260px;
   }
 }
