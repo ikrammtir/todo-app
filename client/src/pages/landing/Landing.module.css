@@ -1,30 +1,28 @@
-/* ===== LANDING CONTAINER ===== */
 .landingContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  min-height: 100vh; /* full screen */
-  padding: 40px 5%;
+  min-height: 80vh;
+  padding: 0 5%;
   gap: 40px;
+  box-sizing: border-box;
 }
 
-/* ===== CONTENT ===== */
 .landingContent {
   flex: 1;
   max-width: 550px;
 }
 
 .landingContent h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 800;
   color: #1e293b;
-  line-height: 1.1;
+  line-height: 1.2;
   margin-bottom: 25px;
 }
 
-/* ===== BUTTONS ===== */
 .landingBtns {
   display: flex;
   gap: 15px;
@@ -32,37 +30,25 @@
 
 .registerBtn,
 .loginBtn {
-  padding: 12px 35px;
+  padding: 12px 25px;
   border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.25s ease;
+  width: auto;
 }
 
-/* Register */
 .registerBtn {
   background: #4f46e5;
   color: white;
   border: none;
 }
 
-.registerBtn:hover {
-  background: #4338ca;
-}
-
-/* Login */
 .loginBtn {
   background: white;
   color: #4f46e5;
   border: 2px solid #4f46e5;
 }
 
-.loginBtn:hover {
-  background: #4f46e5;
-  color: white;
-}
-
-/* ===== IMAGE ===== */
 .landingImage {
   flex: 1;
   display: flex;
@@ -70,45 +56,23 @@
   align-items: center;
 }
 
+/* 🔥 IMPORTANT FIX */
 .landingImage img {
   width: 100%;
-  max-width: 500px;
+  max-width: 450px; /* desktop limit */
   height: auto;
 }
 
-/* ===== TABLET ===== */
-@media (max-width: 992px) {
+/* 📱 MOBILE */
+@media (max-width: 768px) {
   .landingContainer {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    padding: 30px 20px;
-    gap: 25px;
+    padding-top: 40px;
   }
 
   .landingContent {
     max-width: 100%;
-  }
-
-  .landingBtns {
-    justify-content: center;
-  }
-
-  .landingImage img {
-    max-width: 280px;
-  }
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 480px) {
-  .landingContainer {
-    padding: 20px;
-    gap: 20px;
-  }
-
-  .landingContent h1 {
-    font-size: 1.8rem;
   }
 
   .landingBtns {
@@ -119,10 +83,14 @@
   .registerBtn,
   .loginBtn {
     width: 100%;
-    padding: 12px;
+  }
+
+  .landingImage {
+    margin-top: 30px;
   }
 
   .landingImage img {
-    max-width: 220px;
+    max-width: 280px; /* 👈 THIS FIXES YOUR ISSUE */
+    width: 100%;
   }
 }

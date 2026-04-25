@@ -1,32 +1,42 @@
-.login__card {
+/* ===== AUTH CARD (Login + Register) ===== */
+
+.login__card,
+.register__card {
   width: 90%;
-  max-width: 450px;
-  margin: 120px auto 40px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-  padding: 2.5rem;
+  max-width: 420px;
+  margin: 100px auto 40px;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 14px;
   border: 1px solid #eee;
-  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #fff;
   box-sizing: border-box;
 }
 
-.login__card h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  margin-top: 1rem;
-}
-
-.login__card img {
-  width: 80px;
+/* ===== IMAGE ===== */
+.login__card img,
+.register__card img {
+  width: 90px;
   height: auto;
+  margin-bottom: 15px;
 }
 
-/* wrappers */
-.input__wrapper,
-.input__inline__wrapper {
+/* ===== TITLE ===== */
+.login__card h2,
+.register__card h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ===== INPUT WRAPPERS ===== */
+.input__wrapper {
   width: 100%;
   margin-bottom: 1.2rem;
 }
@@ -34,52 +44,71 @@
 .input__inline__wrapper {
   display: flex;
   gap: 10px;
+  width: 100%;
+  margin-bottom: 1.2rem;
 }
 
+/* make inline inputs equal */
 .input__inline__wrapper > * {
   flex: 1;
 }
 
-/* info text */
+/* ===== INFO TEXT ===== */
 .input__info {
-  width: 100%;
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 15px;
   text-align: center;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
 }
 
-/* button full width */
-.login__card button {
+.input__info a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ===== BUTTON ===== */
+button,
+.ant-btn {
   width: 100%;
+  border-radius: 10px !important;
+  font-weight: 600;
 }
 
-/* ===== TABLET ===== */
-@media (max-width: 768px) {
-  .login__card {
-    margin: 80px auto 30px;
-  }
-}
-
-/* ===== MOBILE ===== */
+/* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 480px) {
-  .login__card {
+  .login__card,
+  .register__card {
     width: 95%;
     padding: 1.5rem;
-    margin: 60px auto 20px;
+    margin-top: 70px;
   }
 
-  .login__card h2 {
-    font-size: 1.4rem;
+  .login__card h2,
+  .register__card h2 {
+    font-size: 1.5rem;
   }
 
+  /* stack first + last name */
   .input__inline__wrapper {
     flex-direction: column;
     gap: 1rem;
   }
 
-  /* fix Ant Design inputs */
-  .input__inline__wrapper .ant-input,
-  .input__inline__wrapper .ant-input-affix-wrapper {
+  .input__inline__wrapper > * {
     width: 100%;
+  }
+
+  /* smaller image */
+  .login__card img,
+  .register__card img {
+    width: 70px;
+  }
+
+  /* button spacing */
+  button,
+  .ant-btn {
+    font-size: 14px;
+    padding: 10px;
   }
 }
