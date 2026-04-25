@@ -1,14 +1,16 @@
+/* ===== LANDING CONTAINER ===== */
 .landingContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  min-height: 80vh;
-  padding: 0 5%;
+  min-height: 100vh; /* full screen */
+  padding: 40px 5%;
   gap: 40px;
 }
 
+/* ===== CONTENT ===== */
 .landingContent {
   flex: 1;
   max-width: 550px;
@@ -22,12 +24,12 @@
   margin-bottom: 25px;
 }
 
+/* ===== BUTTONS ===== */
 .landingBtns {
   display: flex;
   gap: 15px;
 }
 
-/* Buttons */
 .registerBtn,
 .loginBtn {
   padding: 12px 35px;
@@ -60,7 +62,7 @@
   color: white;
 }
 
-/* Image */
+/* ===== IMAGE ===== */
 .landingImage {
   flex: 1;
   display: flex;
@@ -78,10 +80,11 @@
 @media (max-width: 992px) {
   .landingContainer {
     flex-direction: column;
-    text-align: center;
     justify-content: center;
-    padding-top: 40px;
-    gap: 30px;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    gap: 25px;
   }
 
   .landingContent {
@@ -93,7 +96,7 @@
   }
 
   .landingImage img {
-    max-width: 320px;
+    max-width: 280px;
   }
 }
 
@@ -105,7 +108,7 @@
   }
 
   .landingContent h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .landingBtns {
@@ -120,6 +123,6 @@
   }
 
   .landingImage img {
-    max-width: 250px;
+    max-width: 220px;
   }
 }
