@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const SERVER_URL = 'http://localhost:5000/api';
+const SERVER_URL = 'https://todo-app-production-fc1f.up.railway.app/api';
 
 
 const registerUser = (data)=>{
