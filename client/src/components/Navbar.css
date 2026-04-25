@@ -1,3 +1,4 @@
+/* ===== HEADER ===== */
 header {
   width: 100%;
   background: #ffffff;
@@ -5,13 +6,14 @@ header {
   padding: 10px 30px;
 }
 
+/* ===== NAV ===== */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 }
 
+/* ===== LOGO ===== */
 .logo__wrapper {
   display: flex;
   align-items: center;
@@ -30,6 +32,7 @@ nav {
   font-weight: 600;
 }
 
+/* ===== MENU ===== */
 .navigation-menu {
   display: flex;
   align-items: center;
@@ -37,11 +40,6 @@ nav {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.navigation-menu li {
-  display: flex;
-  align-items: center;
 }
 
 .navigation-menu li a {
@@ -52,15 +50,16 @@ nav {
 }
 
 .navigation-menu li a:hover {
-  color: #007bff;
+  color: #4f46e5;
 }
 
 .activeNav {
-  color: #007bff !important;
-  border-bottom: 2px solid #007bff;
+  color: #4f46e5 !important;
+  border-bottom: 2px solid #4f46e5;
   padding-bottom: 3px;
 }
 
+/* ===== USER ===== */
 .userInfoNav {
   display: flex;
   align-items: center;
@@ -69,45 +68,51 @@ nav {
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  object-fit: cover;
 }
 
-.userInfoNav span {
-  font-size: 14px;
-  color: #333;
+/* ===== MOBILE MENU BUTTON ===== */
+.menuToggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
 }
 
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
   header {
     padding: 10px 15px;
   }
 
   nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    position: relative;
+  }
+
+  .menuToggle {
+    display: block;
   }
 
   .navigation-menu {
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    width: 200px;
+    padding: 15px;
     gap: 15px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    display: none; /* hidden by default */
   }
 
-  .navigation-menu li a {
-    font-size: 14px;
+  .navigation-menu.active {
+    display: flex; /* show when toggled */
   }
 
   .userInfoNav {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .logo__wrapper h4 {
-    font-size: 18px;
+    justify-content: flex-start;
   }
 }

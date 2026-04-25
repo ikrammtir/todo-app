@@ -1,18 +1,21 @@
+/* ===== GLOBAL ===== */
 body {
   background-color: #f8fafc;
   margin: 0;
 }
 
+/* ===== WRAPPER ===== */
 .toDoWrapper {
-  margin-top: 100px;
+  margin-top: 90px;
   padding: 2rem 5%;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 90px);
   box-sizing: border-box;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
+/* ===== HEADER ===== */
 .toDoHeader {
   display: flex;
   align-items: center;
@@ -20,8 +23,8 @@ body {
   background: #ffffff;
   padding: 1.5rem 2rem;
   border-radius: 16px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
   gap: 20px;
 }
 
@@ -33,6 +36,7 @@ body {
   white-space: nowrap;
 }
 
+/* ===== SEARCH ===== */
 .searchBarWrapper {
   flex: 1;
   display: flex;
@@ -40,58 +44,60 @@ body {
   align-items: center;
 }
 
+/* ===== GRID ===== */
 .toDoListCardWrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
   width: 100%;
 }
 
+/* ===== CARD ===== */
 .toDoCard {
   background: #ffffff;
-  border-radius: 20px;
-  padding: 24px;
+  border-radius: 18px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  position: relative;
   border: 1px solid #f1f5f9;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.25s ease;
 }
 
 .toDoCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  border-color: #e2e8f0;
+  transform: translateY(-6px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.08);
 }
 
+/* ===== CARD HEADER ===== */
 .toDoCardHeader {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .toDoCardHeader h3 {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #1e293b;
-  line-height: 1.4;
 }
 
+/* ===== CARD BODY ===== */
 .toDoCard p {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #64748b;
-  margin: 0 0 20px 0;
-  line-height: 1.6;
+  margin: 0 0 16px 0;
+  line-height: 1.5;
   flex-grow: 1;
 }
 
+/* ===== FOOTER ===== */
 .toDoCardFooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 16px;
+  padding-top: 12px;
   border-top: 1px solid #f1f5f9;
 }
 
@@ -110,8 +116,8 @@ body {
 }
 
 .actionIcon {
-  font-size: 1.1rem;
-  padding: 8px;
+  font-size: 1rem;
+  padding: 7px;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s;
@@ -119,25 +125,66 @@ body {
 }
 
 .actionIcon:hover {
-  background: #f1f5f9;
+  background: #eef2f7;
   transform: scale(1.1);
 }
 
+/* ===== EMPTY STATE ===== */
 .noTaskWrapper {
   grid-column: 1 / -1;
-  padding: 6rem 0;
+  padding: 5rem 0;
   background: white;
-  border-radius: 24px;
+  border-radius: 20px;
   border: 2px dashed #e2e8f0;
+  text-align: center;
 }
 
+/* ===== TABLET ===== */
 @media (max-width: 992px) {
   .toDoHeader {
     flex-direction: column;
     align-items: stretch;
   }
-  
+
   .searchBarWrapper {
     flex-direction: column;
+    width: 100%;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 480px) {
+  .toDoWrapper {
+    padding: 1.5rem 15px;
+  }
+
+  .toDoHeader {
+    padding: 1rem;
+    gap: 15px;
+  }
+
+  .toDoHeader h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .toDoListCardWrapper {
+    grid-template-columns: 1fr; /* 👈 ONE CARD PER ROW */
+  }
+
+  .toDoCard {
+    padding: 16px;
+  }
+
+  .toDoCardHeader h3 {
+    font-size: 1rem;
+  }
+
+  .toDoCard p {
+    font-size: 0.85rem;
+  }
+
+  .actionIcon {
+    padding: 6px;
   }
 }

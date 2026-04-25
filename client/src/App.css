@@ -1,5 +1,4 @@
-/* app.css - COMPLETE FINAL VERSION */
-
+/* ===== GLOBAL ===== */
 body {
   margin: 0;
   padding: 0;
@@ -8,7 +7,7 @@ body {
   background-color: #f8fafc;
 }
 
-/* Global Button Styles */
+/* ===== BUTTONS (GLOBAL) ===== */
 .primaryBtn {
   padding: 12px 35px;
   background-color: #4f46e5;
@@ -20,6 +19,10 @@ body {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.primaryBtn:hover {
+  background-color: #4338ca;
 }
 
 .secondaryBtn {
@@ -35,107 +38,15 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Landing Page Wrapper */
-.landing_wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 8%;
-  min-height: calc(100vh - 80px); /* Centers between Navbar and bottom */
-  gap: 50px;
-  max-width: 1300px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  width: 100%;
+.secondaryBtn:hover {
+  background-color: #4f46e5;
+  color: white;
 }
 
-.landing_text {
-  flex: 1;
-  max-width: 550px;
-  text-align: left;
-}
-
-.landing_text h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
-  color: #1e293b;
-  line-height: 1.1;
-  margin-bottom: 30px;
-}
-
-.btnWrapper {
-  display: flex;
-  gap: 20px;
-}
-
-/* Image Container - This stops the image from being "giant" */
-.landing_img {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.landing_img img {
-  width: 100% !important;
-  max-width: 520px !important; /* Matches your small image goal */
-  height: auto !important;
-  display: block !important;
-  object-fit: contain;
-}
-
-/* --- MOBILE & TABLET RESPONSIVENESS --- */
-
-@media (max-width: 992px) {
-  .landing_wrapper {
-    flex-direction: column !important; /* STACKS VERTICALLY */
-    text-align: center;
-    padding: 60px 5%;
-    justify-content: center;
-    min-height: auto;
-  }
-
-  .landing_text {
-    order: 1; /* Title first on mobile */
-    max-width: 100%;
-  }
-
-  .landing_img {
-    order: 2; /* Image below text on mobile */
-    width: 100%;
-    margin-top: 30px;
-  }
-
-  .landing_img img {
-    max-width: 320px !important; /* Keeps image small on phones */
-  }
-
-  .btnWrapper {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .landing_text h1 {
-    font-size: 2.2rem;
-  }
-
-  .btnWrapper {
-    flex-direction: column; /* Buttons stack on tiny phones */
-    width: 100%;
-  }
-
-  .primaryBtn, .secondaryBtn {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-/* Login/Register Card Image Fix */
-.login__card img, 
-.register__card img {
-  width: 120px !important;
-  height: 120px !important;
+/* ===== AUTH IMAGE FIX ===== */
+.login__card img {
+  width: 100px;
+  height: auto;
   margin: 0 auto 20px;
   display: block;
 }
