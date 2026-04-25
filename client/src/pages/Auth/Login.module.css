@@ -20,7 +20,8 @@
   margin-top: 1rem;
 }
 
-.input__wrapper, .input__inline__wrapper {
+.input__wrapper,
+.input__inline__wrapper {
   margin-bottom: 1.2rem;
   width: 100%;
 }
@@ -31,8 +32,7 @@
   gap: 10px;
 }
 
-/* Added this to ensure inputs inside the wrapper behave properly on desktop */
-.input__inline__wrapper > div, 
+.input__inline__wrapper > div,
 .input__inline__wrapper > input {
   flex: 1;
   width: 100%;
@@ -43,28 +43,38 @@
   height: auto;
 }
 
-/* --- THE MOBILE FIX --- */
+/* ===== TABLET ===== */
+@media (max-width: 768px) {
+  .login__card {
+    margin: 80px auto 30px;
+  }
+}
+
+/* ===== MOBILE ===== */
 @media (max-width: 480px) {
   .login__card {
     padding: 1.5rem;
     width: 95%;
+    margin: 60px auto 20px; /* FIXED spacing */
   }
-  
+
+  .login__card h2 {
+    font-size: 1.4rem;
+  }
+
   .input__inline__wrapper {
     flex-direction: column;
-    gap: 1.2rem; /* Matches the margin-bottom of .input__wrapper */
+    gap: 1rem;
   }
 
-  /* Force the name inputs to take 100% width so they align with the boxes below */
   .input__inline__wrapper > div,
   .input__inline__wrapper > input {
-    width: 100% !important;
-    display: block !important;
+    width: 100%;
   }
 
-  /* If you are using Ant Design or another library, this ensures the inner input stretches */
+  /* For Ant Design (if used) */
   .input__inline__wrapper .ant-input-affix-wrapper,
   .input__inline__wrapper .ant-input {
-    width: 100% !important;
+    width: 100%;
   }
 }
