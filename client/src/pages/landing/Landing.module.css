@@ -1,5 +1,3 @@
-/* Landing.module.css */
-
 .landingContainer {
   display: flex;
   align-items: center;
@@ -21,7 +19,7 @@
   font-weight: 800;
   color: #1e293b;
   line-height: 1.1;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .landingBtns {
@@ -29,28 +27,40 @@
   gap: 15px;
 }
 
-.registerBtn {
-  padding: 12px 35px;
-  background: #4f46e5;
-  color: white;
-  border-radius: 10px;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
+/* Buttons */
+.registerBtn,
 .loginBtn {
   padding: 12px 35px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Register */
+.registerBtn {
+  background: #4f46e5;
+  color: white;
+  border: none;
+}
+
+.registerBtn:hover {
+  background: #4338ca;
+}
+
+/* Login */
+.loginBtn {
   background: white;
   color: #4f46e5;
   border: 2px solid #4f46e5;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
+.loginBtn:hover {
+  background: #4f46e5;
+  color: white;
+}
+
+/* Image */
 .landingImage {
   flex: 1;
   display: flex;
@@ -58,26 +68,24 @@
   align-items: center;
 }
 
-/* This fixes the "Giant Image" issue from your screenshot */
 .landingImage img {
   width: 100%;
-  max-width: 500px; 
+  max-width: 500px;
   height: auto;
-  display: block;
 }
 
-/* Tablet & Mobile Responsiveness */
+/* ===== TABLET ===== */
 @media (max-width: 992px) {
   .landingContainer {
-    flex-direction: column; 
+    flex-direction: column;
     text-align: center;
-    padding-top: 40px;
     justify-content: center;
+    padding-top: 40px;
+    gap: 30px;
   }
 
   .landingContent {
     max-width: 100%;
-    margin-bottom: 40px;
   }
 
   .landingBtns {
@@ -85,17 +93,33 @@
   }
 
   .landingImage img {
-    max-width: 300px; /* Makes image smaller on mobile like your goal */
+    max-width: 320px;
   }
 }
 
+/* ===== MOBILE ===== */
 @media (max-width: 480px) {
+  .landingContainer {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .landingContent h1 {
+    font-size: 2rem;
+  }
+
   .landingBtns {
     flex-direction: column;
     width: 100%;
   }
-  
-  .registerBtn, .loginBtn {
+
+  .registerBtn,
+  .loginBtn {
     width: 100%;
+    padding: 12px;
+  }
+
+  .landingImage img {
+    max-width: 250px;
   }
 }
